@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Window Javascript</title>
+		<meta charset="UTF-8">
+		<script type = "text/javascript">
+
+		    window.alert("Salve...");
+			
+		    ///////////////////////////
+			
+			var escolha = window.confirm("Escolha um dos botões abaixo e o pressione.");
+			var botao;
+			if (escolha == true) {
+				botao = "OK";
+			}
+			else {
+			botao = "Cancelar";
+			}
+			window.alert("Você escolheu o botão " + botao);
+			
+			///////////////////////////////////
+		
+			var nome = window.prompt("Digite o seu nome");
+			var resposta;
+			if (nome == null){ window.alert("nulo!");}
+			
+			if (nome == "")  { window.alert("string vazia!");}
+			
+			if (nome != null && nome != "") {
+				resposta = "Olá " + nome + "! \nSeja bem vindo ao sistema.";
+				window.alert(resposta);
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1 style="color:red">Variáveis</h1>
+	</body>
+</html>

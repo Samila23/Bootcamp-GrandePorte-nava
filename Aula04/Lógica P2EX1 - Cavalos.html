@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Cavalos</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:tomato;
+			}
+		</style>
+		<script type = "text/javascript">
+			function calcula(){
+				var massa   = parseFloat(document.getElementById("campoMassa").value);
+				var altura  = parseFloat(document.getElementById("campoAltura").value);
+				var tempo   = parseFloat(document.getElementById("campoTempo").value);
+				var cavalos = massa * altura / tempo / 745.6999;
+				var frase   = "Para levantar " + massa +
+				              "kg a uma altura de " + altura + 
+							  "m em " + tempo +
+							  "s serão necessários " + cavalos.toFixed(2) +
+							  " cavalos.";
+				if(isNaN(cavalos)){
+					document.getElementById("spanResposta").innerHTML= 
+					      "Erro - informar os dados corretamente.";
+				} else {
+					document.getElementById("spanResposta").innerHTML= frase;
+				}
+			}
+			function limpar(){
+				document.getElementById("campoMassa").value = null;
+				document.getElementById("campoAltura").value = null;
+				document.getElementById("campoTempo").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Quantidade de Cavalos</h1>
+		<img src="./imagens/cavalo.png" width="150">
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Massa</td>
+				<td><input type="text" id="campoMassa"></td>
+			</tr>
+			<tr>
+				<td>Altura</td>
+				<td><input type="text" id="campoAltura"></td>
+			</tr>
+			<tr>
+				<td>Tempo</td>
+				<td><input type="text" id="campoTempo"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Calcular" onclick="calcula()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

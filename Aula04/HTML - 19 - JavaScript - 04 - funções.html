@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Funções Javascript</title>
+		<meta charset="UTF-8">
+		<script type = "text/javascript">
+			function imprime(a=5){
+				document.write("<p>"+a+"<p>");
+				console.log(a);
+			}
+			
+			function salve(){
+				document.write("<p>Salve!!!<p>");
+				console.log("<p>Salve!!!<p>");
+			}
+			
+			function soma(a,b){
+				document.write("<p>"+(a+b)+"<p>");
+			}
+			
+			function ehBissexto(ano){
+				if (ano%4==0 && ano%100!=0 || ano%400==0 && ano%3600!=0)
+					return true;
+				else
+					return false;
+			}
+			
+			function imprimeBissexto(ano){
+				if(ehBissexto(ano)) {
+				   document.write("<p>"+ano+" É Bissexto<p>");
+				}
+				else  {
+				   document.write("<p>"+ano+" Não é Bissexto<p>");
+				}
+				
+			}
+			
+		</script>		
+	</head>
+	<body>
+
+		<h1 style="color:red">Funções</h1>
+		<input type="button" value="imprime a" onclick="imprime(7)">
+		<input type="button" value="imprime b" onclick="imprime()">
+		<input type="button" value="salve" onclick="salve()">
+		<input type="button" value="soma" onclick="soma(4,5)">
+		<input type="button" value="bissexto" onclick="imprimeBissexto(2100)">
+	</body>
+</html>
