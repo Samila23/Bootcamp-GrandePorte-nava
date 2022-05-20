@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Idade</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:aqua;
+			}
+		</style>
+		<script type = "text/javascript">
+			function exibir(){
+			    var idade;
+				
+				do {
+					idade = Math.ceil(Math.random()*130-50);
+				} while (idade <= 0 || idade >= 130);
+				
+				var dias = idade * 365;
+				document.getElementById("spanIdade").innerHTML = idade;
+				document.getElementById("spanResposta").innerHTML = 
+				"você já viveu aproximadamente " + dias + " dias.";
+			}
+			
+			function limpar(){
+				document.getElementById("spanIdade").innerHTML = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Idade</h1>
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Idade</td>
+				<td><span id="spanIdade"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Exibir" onclick="exibir()">
+					<input type="button" value="Limpar" onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Tabuada</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:aqua;
+			}
+		</style>
+		<script type = "text/javascript">
+			function exibir(){
+				var numero = document.getElementById("campoNumero").value;
+				var cont  = 1;
+				var tabuada = "";
+				
+				while(cont <= 100){
+				    tabuada += cont + " x " + 
+					           numero + " = " +
+							   (numero*cont) + "<br>";
+					cont++;
+				}
+				document.getElementById("spanResposta").innerHTML= tabuada;
+			}
+			
+			function limpar(){
+				document.getElementById("campoNumero").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Tabuada</h1>
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Número</td>
+				<td><input type="text" id="campoNumero"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Exibir" onclick="exibir()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

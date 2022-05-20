@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Nota da Faculdade</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:tomato;
+			}
+		</style>
+		<script type = "text/javascript">
+			function calcula(){
+				var nota1   = parseFloat(document.getElementById("campoNota1").value);
+				var nota2   = parseFloat(document.getElementById("campoNota2").value);
+				var notaExame  = parseFloat(document.getElementById("campoNotaExame").value);
+				var media = nota1+nota/2;
+				// colocar o if aqui
+				if (media >= 7){
+				}
+				else
+					if (media <= 7){
+						
+					}
+
+			}
+			function limpar(){
+				document.getElementById("campoNota1").value = null;
+				document.getElementById("campoNota2").value = null;
+				document.getElementById("campoNotaExame").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Nota da Faculdade</h1>
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Nota 1</td>
+				<td><input type="text" id="campoNota1"></td>
+			</tr>
+			<tr>
+				<td>Nota 2</td>
+				<td><input type="text" id="campoNota2"></td>
+			</tr>
+			<tr>
+				<td>Nota Exame</td>
+				<td><input type="text" id="campoNotaExame"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Calcular" onclick="calcula()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

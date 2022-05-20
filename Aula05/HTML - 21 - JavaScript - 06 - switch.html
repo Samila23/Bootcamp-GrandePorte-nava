@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Benefícios</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:tomato;
+			}
+		</style>
+		<script type = "text/javascript">
+			function exibir(){
+				var cargo = document.getElementById("campoCargo").value;
+				var beneficios = "";
+ 
+                switch(cargo){
+					case "pleno" : 
+				       beneficios += "auxílio combustível </br>"
+					case "junior" : 
+				       beneficios += "auxílio moradia </br>"
+					case "trainee" : 
+				       beneficios += "vale refeição </br>"
+					   beneficios += "vale alimentação </br>"
+					case "estagiário" : 
+				       beneficios += "vale transporte </br>"
+					   beneficios += "seguro de vida </br>"
+					default:
+					   beneficios += "tirar foto na entrada da empresa </br>"
+				}
+
+				document.getElementById("spanResposta").innerHTML= beneficios;
+			}
+			
+			function limpar(){
+				document.getElementById("campoCargo").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Qual o cargo</h1>
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Cargo</td>
+				<td><input type="text" id="campoCargo"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Exibir" onclick="exibir()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>
