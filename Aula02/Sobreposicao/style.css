@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+#DivRetratoSup{
+    position: relative;
+    z-index: 2; 
+    margin: 0; 
+    padding: 0;
+    width: 40%;
+}
+.DivRetratoSup{
+    width: 100%;
+    margin-left: 5%;
+}
+#DivRetratoSup2{
+    position: relative;
+    margin-left: 50%;
+    width: 45%;
+    z-index: 2; 
+    margin-top: -80%;
+}
+.DivRetratoSup2{
+    width: 100%;
+}
+#DivMoldura{
+    position: relative;
+    z-index: 3; 
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+.DivMoldura{
+    width: 100%;
+    margin-top: -60%;
+}
+#DivFundo{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+.DivFundo{
+    margin-top: -100%;
+    width: 100%;
+}

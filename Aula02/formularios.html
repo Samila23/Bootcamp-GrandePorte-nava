@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Formulário</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h2>Campos de um Formulário</h2>
+		<form method="get">
+			<table border="0" cellspacing="0" cellpadding="5">
+				<tr>
+					<td>Nome</td>
+					<td><input type="text" 
+					           placeholder="Nome Completo"
+							   size="20"
+							   maxlength="20"
+					           id="campoNome" 
+							   name="campoNome"
+							   required>
+					</td>
+				</tr>
+				<tr>
+					<td>Senha</td>
+					<td><input type="password" 
+					           placeholder="digite sua senha"
+					           id="campoSenha" 
+							   name="campoSenha"
+							   required></td>
+				</tr>
+				<tr>
+					<td>Experiência</td>
+					<td>
+						<input id="campoIngles" name="campoIngles" type="radio" value="0">Nenhum
+						<input id="campoIngles" name="campoIngles" type="radio" value="1" checked>até 01 ano
+						<input id="campoIngles" name="campoIngles" type="radio" value="2">Entre 02 e 03 anos
+						<input id="campoIngles" name="campoIngles" type="radio" value="3">Entre 03 e 04 anos
+						<input id="campoIngles" name="campoIngles" type="radio" value="4">Maior que 04 anos
+					</td>
+				</tr>
+				<tr>
+					<td>Preferência de Vaga</td>
+					<td>
+						<input id="CampoHobby" name="CampoHobby" type="checkbox" value="L" checked>Engineer Software
+						<input id="CampoHobby" name="CampoHobby" type="checkbox" value="E">Data Scientist 
+						<input id="CampoHobby" name="CampoHobby" type="checkbox" value="P" checked>Segurança da Informação
+						<input id="CampoHobby" name="CampoHobby" type="checkbox" value="E">Suporte Técnico em Informática
+					</td>
+				</tr>
+				<tr>
+					<td>Descreva sua ultima experiência:</td>
+					<td>
+						<textarea placeholder="Descreva sua ultima experiência" id="CampoObs" name="campoObs" cols="30" rows="10"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>Estado Civil</td>
+					<td>
+						<select name="campoEstado" id="campoEstado">
+							<option selected>Escolha a Opção
+							<option>Solteiro(a)
+							<option >Casado(a)
+							<option>Divorciado(a)
+							<option>Viúvo(a)
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Data e Hora</td>
+					<td><input type = "datetime-local" name = "campoDataHora"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+
+			<input type="submit" value="Enviar">
+			<input type="reset" value="Limpar">
+		</form>
+	</body>
+</html>
