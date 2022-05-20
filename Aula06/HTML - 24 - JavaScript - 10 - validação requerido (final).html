@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Validação Requerido</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:aqua;
+			}
+		</style>
+		<script type = "text/javascript">
+			function validarRequerido(){
+			   document.getElementById("spanNome").innerHTML = "*";
+			   document.getElementById("spanIdade").innerHTML = "*";
+			   document.getElementById("spanSenha").innerHTML = "*";			
+			   var okNome = true;
+			   var okIdade = true;
+			   var okSenha = true;
+				
+			   // validações no campoNome	
+			   var nome = document.getElementById("campoNome").value;
+			   // 1 - verificando se o campo não foi preenchido
+			   if(okNome && (nome == null || nome == "")){
+			      document.getElementById("spanNome").innerHTML = 
+				  "* Preencher este campo";
+				  okNome = false;
+			   }
+			   
+			   // 2 - verificar se o primeiro caractere é espaço em branco ou ponto
+			   if(okNome && (nome.charAt(0)==" " || nome.charAt(0)==".")){
+			      document.getElementById("spanNome").innerHTML =
+				  "* Nome não pode começar com espaço em branco ou ponto";
+				  okNome = false;
+			   }
+			   
+			   // 3 - verificar se há números no campoNome
+			   var pedro = /^[a-zA-Z .çÇ']+$/
+			   if(okNome && !pedro.test(nome)){
+			      document.getElementById("spanNome").innerHTML =
+				  "* Nome deve conter letras e pode conter ponto ou espaço em branco";
+				  okNome = false;
+			   }
+
+			   // validações no campoIdade
+			   var idade = document.getElementById("campoIdade").value;
+			   // 1 - verificando se o campo não foi preenchido
+			   if(okIdade && (idade == null || idade == "")){
+			      document.getElementById("spanIdade").innerHTML = 
+				  "* Preencher este campo";
+				  okIdade = false;
+			   }			   
+			   // 2 - verificando se o campo idade é numerico
+			   idade = parseInt(idade);
+			   if(okIdade && isNaN(idade)){
+			      document.getElementById("spanIdade").innerHTML = 
+				  "* usar apenas números naturais";
+				  okIdade = false;
+			   }
+			   // 3 - verificando se o campo idade é positiva e menor que 200
+			   if(okIdade && (idade < 0 || idade > 200)){
+			      document.getElementById("spanIdade").innerHTML = 
+				  "* idade deve estar no intervalo [0,200]";
+				  okIdade = false;
+			   }
+
+			   // validações no campoNome	
+			   var senha = document.getElementById("campoSenha").value;
+			   // 1 - verificando se o campo não foi preenchido
+			   if(okSenha && (senha == null || senha == "")){
+			      document.getElementById("spanSenha").innerHTML = 
+				  "* Preencher este campo";
+				  okSenha = false;
+			   }
+			   
+			   return okNome && okIdade && okSenha;
+			}
+			
+			function limpar(){
+				document.getElementById("spanNome").innerHTML = "*";
+				document.getElementById("spanIdade").innerHTML = "*";
+				document.getElementById("spanSenha").innerHTML = "*";
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Cadastro</h1>
+		<form id="formCadastro" method="get">
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr>
+					<td>Nome</td>
+					<td><input type="text" id=campoNome></td>
+					<td><span id="spanNome" style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td>Idade</td>
+					<td><input type="text" id=campoIdade></td>
+					<td><span id="spanIdade" style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td>Senha</td>
+					<td><input type="password" id=campoSenha></td>
+					<td><span id="spanSenha" style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;">
+						<input type="submit" value="Enviar" 
+						       onclick="return validarRequerido()">
+						<input type="reset" value="Limpar" onclick="limpar()">
+					</td>	
+				</tr>
+			</table>
+		</form>
+		<p>* campo obrigatório</p>
+	</body>
+</html>

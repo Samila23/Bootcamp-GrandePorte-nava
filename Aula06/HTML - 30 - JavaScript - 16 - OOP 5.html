@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Sort</title>
+		<meta charset="UTF-8">
+		<script type = "text/javascript">
+		
+			function compara(x, y) {
+				if (x <  y)  return -1;
+				if (x == y)  return  0;
+				if (x >  y)  return  1;
+			}
+			
+			var vetor1 = [5, 45, 1, 4, 16];
+			var vetor2 = [5, 45, 1, 4, 16];
+			var vetor3 = [5, 45, 1, 4, 16];
+			
+            var errado = vetor2.sort();
+			var certo  = vetor3.sort(compara);
+			
+			document.write("Original      -> " + vetor1 + "<br/>");
+			document.write("Sort          -> " + errado + "<br/>");
+			document.write("Sort(compara) -> " + certo);
+			
+		</script>		
+	</head>
+	<body>
+	</body>
+</html>

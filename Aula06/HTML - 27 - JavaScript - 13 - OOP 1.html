@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>OOP</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			var nave = {
+				nome      : "Enterprise",
+				propulsao : "Infinita",
+				dono      : "Jeffrey Archer"
+			};
+			
+			console.log(nave.nome);
+			console.log(nave.dono);
+
+			// --------------------------------------
+			// construtor de objetos do tipo Carro
+			function Carro(modelo, marca, ano, motor) {
+				this.modelo = modelo;
+				this.marca  = marca;
+				this.ano    = ano;
+				this.motor  = motor;
+			}
+			
+			console.log(Carro);
+			
+			var car = new Carro("G3", "Gol", 2000, 1.0);
+			console.log("modelo: " + car.modelo);			
+			console.log("marca: " + car.marca);			
+
+			// Uma função fictícia para cálculo de um consumo de combustível
+			function calc_consumo(distancia) {
+				return distancia / (15 / this.motor);
+			}
+			// Agora atribui a função, sem os argumentos, para a
+			// propriedade consumo. Considerando o objeto já instânciado
+			// do exemplo anterior
+			car.consumo = calc_consumo;
+			// Pronto! já se pode invocá-la fazendo:
+			var gas = car.consumo(200);
+			// calculando quanto o carro gastaria de
+			// combustível em 200 quilômetros	
+			console.log("combustível em 200 quilômetros " + car.consumo(200));
+			
+			var car2 = new Carro("C4", "Citroen", 2014, 2.4);
+			car2.consumo = calc_consumo;
+			console.log("combustível em 200 quilômetros " + car2.consumo(200));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>  

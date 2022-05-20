@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>OOP</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			function calc_consumo(distancia) {
+				return distancia / (15 / this.motor);
+			}
+			
+			// Classe que representa um carro
+			function Carro(modelo, marca, ano, motor) {
+				this.modelo = modelo;
+				this.marca = marca;
+				this.ano = ano;
+				this.motor = motor;
+			}
+
+			Carro.prototype.rodas = 4;
+			Carro.prototype.consumo = calc_consumo;
+			
+			// Agora a classe possui uma constante que informa
+			// o número de rodas e o método consumo em seu
+			// prototype
+			var car1 = new Carro("G3", "Gol", 2000, 1.0);
+			var car2 = new Carro("147", "Fiat", 1984, 2.0);
+			
+			// Podemos acessar agora tanto a constante rodas
+			// quanto o método consumo
+			console.log(car1.rodas);
+			console.log(car2.rodas);
+			console.log("==>" + car1["rodas"]);
+			console.log(car1.consumo(180));
+			console.log(car2.consumo(180));
+			// e o mais importante é que ambas estão acessando
+			// apenas uma única constante e um único método
+			// na memória				
+			
+			var arr = new Object();
+			
+			console.log("Objeto arr = " + arr);
+		
+			arr["nome"]  = "Barack Obama";
+			arr["cargo"] = "Presidente dos USA";
+			console.log(arr["nome"]);
+			console.log(arr["cargo"]);
+			// Irá mostrar uma mensagem contendo:
+			// "Presidente dos USA"
+			// Note que não há nenhuma diferença se for feito da seguinte maneira:
+			console.log(arr.nome);
+			console.log(arr.cargo);
+			// Exceto que a string usada como índice no modo []
+			// pode ser manipulada em tempo de execução		
+
+
+            for (var sacola in car1){
+				console.log("sacola = " + sacola);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>  

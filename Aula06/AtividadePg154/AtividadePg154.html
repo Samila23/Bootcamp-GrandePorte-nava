@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Atividade Pg 154 </title>
+		<meta charset="UTF-8">
+        <link href="stylePg154.css" rel="stylesheet" type="text/css" />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="Atividade154.js"></script>
+	</head>
+	<body>
+        <div  id="DivCentral">
+            <hr>
+            <h3> Cliente</h3>
+            <form id="TrocoCliente" method="get">
+                <table  border="0" cellpadding="3" cellspacing="0">
+                    <tr name="CampoNome">
+                        <td><span id="name">Nome:</span></td>
+                        <td><input type="text" maxlength="30"/></td>
+                    </tr>
+                    <tr name="RadioTipoPessoa">
+                        <td>
+                            <section>
+                                <label>
+                                    <input id="TipoPessoaJuridica" type="radio" value="juridica" name="TipodePessoa" onclick="PessoaJuridicaFisica(this.value);">Pessoa Juridica
+                                </label>
+                                <label>
+                                    <input id="TipoPessoaFisica" type="radio" value="fisica" name="TipodePessoa" onclick="PessoaJuridicaFisica(this.value);">Pessoa Física
+                                </label>
+                            </section>
+                        </td>
+                    </tr>
+                    <tr name="CampoCNPJ">
+                        <td>
+                            <div id="id_cnpj" style="display:none;">
+                                <input  id="Preencimento_id_cnpj" name="" placeholder="CNPJ" type="text" onkeypress="mascara(this, '##.###.###/####-##')" maxlength="18"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr  name="CampoCPF">
+                        <td>
+                            <div id="id_cpf" style="display:none;">
+                                <input  id="Preencimento_id_cpf" name="" placeholder="CPF" type="text" onkeypress="mascara(this, '###.###.###-##')" maxlength="14"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr  name="CEP">
+                        <td><span>CEP:</span></td>
+                        <td><input type="text" maxlength="9" name="cep"
+                            onkeypress="mascara(this, '#####-###')"/></td>
+                    </tr>
+                    <tr name="CampoValorCompra">
+                        <td>Valor Compra</td>
+                        <td><input type="text" id="ValorCompra"><span id="">*</span></td>
+                    </tr>
+                    <tr name="CampoValorRecebido">
+                        <td>Valor Recebido</td>
+                        <td><input type="text" id="ValorRecebido"><span id="SpanValorRecebido">*</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="MostrarTroco"></span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="AdicionarNovaCompraouFinalizar" style="display:none;">
+                                <span>Deseja finalizar a compra?</span>
+                                <input type="button" value="Sim" id="AdicionarNovaCompra_Sim"
+                                onclick=" experienciaBoaouRuim(this.value)">
+                                <input type="reset" value="Nao" onclick=" experienciaBoaouRuim(this.value)" id="AdicionarNovaCompra_Nao">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <spn id="FinalizandoCompra" style="display:none;">Obrigada pela preferencia.</spn>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <spn id="IncluirItem" style="display:none;">Deseja Incluir algum item?</spn>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="IncluirItemOpcoesSimNao" style="display:none;">
+                                <input type="button" value="Sim" 
+                                   onclick=" FinalizarOuInserir(this.value)">
+                                <input type="reset" value="Nao" onclick=" FinalizarOuInserir(this.value)">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <spn id="NaoIncluirNovoItem"style="display:none;">Que pena ! Até a próxima.</spn>
+                        </td>
+                    </tr>
+                    <tr name="InserindoNovoItem">
+                        <td>
+                            <div id="InserNovoItem" style="display:none;">
+                                <span>Digite o valor do novo item:</span>
+                                <input type="text" value="" id="ValorDoItemNovo">
+                                <input type="button" value="Incluir" onclick="NovoItem()">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="MostrarValoraPagar"></span>
+                        </td>
+                    </tr>
+                    <tr name="BotaodeEnviar">
+                        <td colspan="2" style="text-align: center;">
+                            <div id="BotoesEnviarCalcular" style="display:inline;">
+                                <input type="button" value="Calcular" 
+                                onclick="CalcularTroco(this.value)" id="Calcular">
+                                <input type="reset" value="Limpar" onclick="limpar(this.value)" id="Limpar">
+                            </div>
+                        </td>	
+                    </tr>
+                </table>
+            </form>
+        </div>
+	</body>
+</html>

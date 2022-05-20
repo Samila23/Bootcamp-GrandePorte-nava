@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Páscoa</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:tomato;
+			}
+		</style>
+		<script type = "text/javascript">
+			function calcula(){
+				var ano   = parseInt(document.getElementById("campoAno").value);
+				var a = ano % 19;
+				var b = Math.floor(ano / 100);
+				var c = ano%100;
+				var d = Math.floor(b / 4);
+				var e = b % 4;
+				var f = Math.floor((b + 8) / 25);
+				var g = Math.floor((b - f + 1) / 3);
+				var h = (19 * a + b - d - g + 15) % 30;
+				var i = Math.floor(c / 4);
+				var j = c % 4;
+				var k = (32 + 2 * e + 2 * i - h - j) % 7;
+				var L = Math.floor((a + 11 * h + 22 * k) / 451);
+				var mes = Math.floor((h + k - 7 * L + 114) / 31);
+				var dia = ((h + k - 7 * L + 114) % 31) + 1;
+				
+				var frase  = dia + "/" + mes + "/" + ano;
+				
+				if(isNaN(ano)){
+					document.getElementById("spanResposta").innerHTML= 
+					      "Erro - informar os dados corretamente.";
+				} else {
+					document.getElementById("spanResposta").innerHTML= frase;
+				}
+			}
+			function limpar(){
+				document.getElementById("campoAno").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Páscoa</h1>
+		<img src="./imagens/Ostara.jpg" width="100">		
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Ano</td>
+				<td><input type="text" id="campoAno"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Calcular" onclick="calcula()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

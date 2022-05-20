@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="AtividadePg155.js"></script>
+        <link href="AtividadePg155.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="formularioCompleto">
+            <form id="TrocoCliente" method="get">
+                <table id="TabelaDoForm"  border="0" cellpadding="3" cellspacing="0">
+                    <tr name="colunaNome">
+                        <td><span id="name">Nome:</span></td>
+                        <td><input type="text" maxlength="30"/></td>
+                    </tr>
+                    <tr name="colunaCargo">
+                        <td><span id="cargo">Cargo:</span></td>
+                        <td><input type="text" maxlength="30"/></td>
+                    </tr>
+                    <tr name="colunaHorarioDeEntrada">
+                        <td><span id="number">Horário de Entrada:</span></td>
+                        <td><input type="time" id="horarioDeEntrada" name="appt"
+                            min="09:00" max="18:00" required>
+                        </td>
+                    </tr>
+                    <tr name="colunaHorarioDeSaida">
+                        <td><span id="number">Horário de Saída:</span></td>
+                        <td><input type="time" id="horarioDeSaida" name="appt"
+                            min="09:00" max="18:00" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" value="Enviar" id="EnviarDadosDeEntradaSaida"
+                                onclick="calcularHora()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="respostaHorasTrabalhadas" style="display:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

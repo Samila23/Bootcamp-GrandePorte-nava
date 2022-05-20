@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Cavalos</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:tomato;
+			}
+		</style>
+		<script type = "text/javascript">
+			function calcula(){
+				var hora   = parseInt(document.getElementById("campoHora").value);
+				var minuto  = parseInt(document.getElementById("campoMinuto").value);
+				var segundo   = parseInt(document.getElementById("campoSegundo").value);
+				var passou = hora * 3600 + minuto * 60 + segundo;
+				var faltam = 86400 - passou;
+				var frase  = "J? se passaram " + passou +
+                  			 " segundos e faltam " + faltam + 
+							 " segundos para acabar o dia.";
+				
+				if(isNaN(passou)){
+					document.getElementById("spanResposta").innerHTML= 
+					      "Erro - informar os dados corretamente.";
+				} else {
+					document.getElementById("spanResposta").innerHTML= frase;
+				}
+			}
+			function limpar(){
+				document.getElementById("campoHora").value = null;
+				document.getElementById("campoMinuto").value = null;
+				document.getElementById("campoSegundo").value = null;
+				document.getElementById("spanResposta").innerHTML= null;
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Quantidade de Segundos</h1>
+		<table border="1" cellpadding="3" cellspacing="0">
+			<tr>
+				<td>Hora</td>
+				<td><input type="text" id="campoHora"></td>
+			</tr>
+			<tr>
+				<td>Minuto</td>
+				<td><input type="text" id="campoMinuto"></td>
+			</tr>
+			<tr>
+				<td>Segundo</td>
+				<td><input type="text" id="campoSegundo"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+					<input type="button" value="Calcular" onclick="calcula()">
+					<input type="button" value="Limpar"   onclick="limpar()">
+				</td>	
+			</tr>
+		</table>
+		<p>Resposta:</p>
+		<span id="spanResposta"></span>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Validação e-mail</title>
+		<meta charset="UTF-8">
+		<style type="text/css" media="all">
+			body {
+			   background-color:aqua;
+			}
+		</style>
+		<script type = "text/javascript">
+			function validarEmail(){
+				var ok = true;
+				var email  = document.getElementById("campoEmail").value;
+                var atpos  = email.indexOf("@");		
+				var dotpos = email.lastIndexOf(".");
+				// atpos < 1  - verifica se começa com @
+				// dotpos < atpos + 2  - verifica se o @ é seguido por .
+				// dotpos + 2 >= email.length - verifica se depois do último ponto dem ao menos 2 caracteres
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+					document.getElementById("spanEmail").innerHTML = "Não é um email válido";
+					ok = false;
+				}
+				//     /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+				//     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+				
+				if (ok && !(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i.test(email))){
+					document.getElementById("spanEmail").innerHTML = "Não é um email válido por regexp";
+					ok = false;
+				}
+				return ok;
+			}
+			
+			function limpar(){
+				document.getElementById("spanEmail").innerHTML = "*";
+			}
+			
+		</script>		
+	</head>
+	<body>
+		<h1>Validar e-mail</h1>
+		<form id="formCadastro" method="get">
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr>
+					<td>e-mail HTML5</td>
+					<td><input type="email"></td>
+					<td><span id="spanNome" style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td>e-mail</td>
+					<td><input type="text" id=campoEmail></td>
+					<td><span id="spanEmail" style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;">
+						<input type="submit" value="Enviar" 
+						       onclick="return validarEmail()">
+						<input type="reset" value="Limpar" onclick="limpar()">
+					</td>	
+				</tr>
+			</table>
+		</form>
+		<p>* campo obrigatório</p>
+	</body>
+</html>
